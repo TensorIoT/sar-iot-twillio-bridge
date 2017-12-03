@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Simple CRUD webservice. State is stored in a SimpleTable (DynamoDB) resource.
+Parameters:
+  AccountSid:
+    Type: String
+    Description: Account SID for Twilio account
+  AuthToken:
+    Type: String
+    Description: AuthToken for Twilio account
+  IncomingTopic:
+    Type: String
+    Default: 'iot/incoming/twilio'
+    Description: Name of the topic to get the Twilio input message from
+  FromNumber:
+    Type: String
+    Description: The phone number the message is coming from
+
+Resources:
+  IoTTwilioFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.lambda_handler
+      Runtime: python2.7
+      CodeUri: ./src/
+      Policies:
+        - AWSIoTRuleActions
+      Environment:
+        Variables:
+          REGION: !Ref AWS::Region
+          FromNumber: !Ref FromNumber
+          IncomingTopic: !Ref IncomingTopic
+          AccountSid: !Ref AccountSid
+          AuthToken: !Ref AuthToken
+      Events:
+        incomingRule:
+          Type: IoTRule
+          Properties:
+            Sql: !Join [ "", [ "SELECT deviceID, incomingText, toNumber FROM '", !Ref IncomingTopic, "'" ] ]
