@@ -22,7 +22,7 @@ Resources:
     Properties:
       Handler: index.lambda_handler
       Runtime: python2.7
-      CodeUri: s3://bucketName/tensoriot-sarapps-dist/IoTTwillioBridge_lambda.zip
+      CodeUri: s3://tensoriot-sarapps-dist/IoTTwillioBridge_lambda.zip
       Environment:
         Variables:
           REGION: !Ref AWS::Region
