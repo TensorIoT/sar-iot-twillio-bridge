@@ -5,10 +5,11 @@ This service provides a bridge between AWS IoT and Twilio for your devices to se
 ![AWS IoT - Twilio Bridge](twilio.png)
 
 ## Table of Contents
-* **[What is AWS Serverless Application Repository?](#)**
-* **[Use Cases](#)**
+* **[What is AWS Serverless Application Repository?](#what-is-aws-serverless-application-repository)**
+* **[Use Cases](#use-cases)**
 * **[Prerequisites](#prerequisites)**
-* **[Setup and Use](#)**
+* **[Setup](#setup)**
+* **[Use](#use)**
 * **[License](#license)**
 
 ## What is AWS Serverless Application Repository?
