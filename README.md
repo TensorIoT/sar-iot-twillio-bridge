@@ -13,6 +13,9 @@ This service provides a bridge between AWS IoT and Twilio for your devices to se
 * **[License](#license)**
 
 ## What is AWS Serverless Application Repository?
+The [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/) is a collection of serverless applications ranging from code samples and components for building web and mobile applications to back-end processing services and complete applications. Each application is packaged with an [AWS Serverless Application Model (SAM)](https://github.com/awslabs/serverless-application-model) template that defines the AWS resources used. The Serverless Application Repository enables you to quickly deploy these code samples, components, and applications for common use cases such as web and mobile back-ends, data processing, chatbots, IoT, and more.  There is no charge to use the Serverless Application Repository - you only pay for the AWS resources used in the applications you deploy.
+
+Check this [launch video](https://youtu.be/ZguvcM_wqoo?t=1184) for more details.
 
 ## Use Cases
 1. Create an alert topic and notify end users directly through Twilio.
@@ -32,7 +35,6 @@ You will need the following information from the previous steps and configure th
 1. FromNumber - The phone number the message is coming from.
 
 ## Use 
-
 The following Input Format is expected from the IoT Topic to trigger the Twilio Workflow
 ```
 {
